@@ -59,6 +59,9 @@ duty of gunicorn  to accept that request , bind it with the main logic and retur
 it is based on linux m/c ans that is why we have given ubuntu m/c in main.yaml
 ** we dont specify the port , this port is applied by heroku 
 ***workers are basically the listeners for web server request. 
+
+
+** gunicorn is specifically used to deploy web application
 """
 
 
