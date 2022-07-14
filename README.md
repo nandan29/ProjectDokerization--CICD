@@ -82,13 +82,32 @@ iii) heroku app = cicd-app123
 iv)location of Dockerfile
 v)name of Dockerfile
 
+In HEROKU for
 ****heeroku api key - [ topRightCorner under profile ->  accountSetting -> apikey -> reveal]
 ****heroku app = [click on new -> create new app -> give some name]
 
 
 Github will allocate a virtual ubuntu m/c where docker image will be build using github action and for deploying that docker image on heroku we need 5 things which I already mentioned above.
 
+Now we will prepare the secrets
 
+Go to ur created repo -> settings -> secrets -> actions -> new repository name 
+
+NAME                    VALUE
+HEROKU_EMAIL            shubham.datascience29@gmail.com         CLICK ON ADD SECRET
+HEROKU_API_KEY          <dont keep it public>                   CLICK ON ADD SECRET
+HEROKU_APP_NAME         cicd-app123                             CLICK ON ADD SECRET
+
+
+
+ONCE ALL THE SECRETS ARE ADDED 
+ACTION TAB -> workflow ->  RERUN JOB AND THEN SELECT EITHER BUILD ALL JOBS/BUILD FAILED JOBS(TOP RIGHT CORNER) .YOU WILL SEE BUILD SUCCESSFUL.
+
+Congrats , application is deployed successfully to HEROKU
+
+open heroku -> click on app -> click on open app
+
+https://cicd-app123.herokuapp.com/  -- link to fetch the result.
 
 
 
@@ -102,7 +121,7 @@ Github will allocate a virtual ubuntu m/c where docker image will be build using
 
 /*
 
-4) Build Docker Image manually
+Build Docker Image manually
 
 i)docker build -t <image_name>:<tagname> .
 
