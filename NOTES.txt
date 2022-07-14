@@ -53,7 +53,9 @@ vi)Finally ,which file is needed to run the application i.e. app.py
 """
 example:-CMD gunicorn --workers=4 --bind 0.0.0.0.$PORT app:app 
 
-****here 0.0.0.0 is local IP
+**here 0.0.0.0 is local IP
+**gunicorn works for linux m/c ans that is why we given ubuntu m/c in main.yaml
+**while deploying to heroku we dont specify the port no 
 """
 
 
