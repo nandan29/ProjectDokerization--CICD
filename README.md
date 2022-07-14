@@ -20,16 +20,18 @@ ONCE YOU HAVE CREATED A REPO IN GITHUB  AND CLONED IT , FOLLOW THE BELOW STEPS:-
 STEPS:-
 1) create conda environment
 
-step i
-conda --version  //to check weather conda environment is present or not
+step i)
+#conda --version  //to check weather conda environment is present or not
 
-step ii
-conda create -p venv python==3.7 -y
+step ii)
+#conda create -p venv python==3.7 -y
 
-** -p is a prefix which indicates that folder with the name venv will be created in the project directory , and tis virtual env will be deleted as soon as we delete the project . If we give -m this directory will be created where anaconda is present.
+"""
+-p is a prefix which indicates that folder with the name venv will be created in the project directory , and tis virtual env will be deleted as soon as we delete the project . If we give -m this directory will be created where anaconda is present.
+"""
 
-step iii
-conda activate venv/
+step iii)
+#conda activate venv/
 
 
 
@@ -87,7 +89,7 @@ In HEROKU for
 ****heroku app = [click on new -> create new app -> give some name]
 
 
-Github will allocate a virtual ubuntu m/c where docker image will be build using github action and for deploying that docker image on heroku we need 5 things which I already mentioned above.
+Github will allocate a virtual ubuntu m/c( as mentioned in main.yaml file) where docker image will be build using github action and for deploying that docker image on heroku we need 5 things which I already mentioned above.
 
 Now we will prepare the secrets
 
@@ -101,13 +103,15 @@ HEROKU_APP_NAME         cicd-app123                             CLICK ON ADD SEC
 
 
 ONCE ALL THE SECRETS ARE ADDED 
-ACTION TAB -> workflow ->  RERUN JOB AND THEN SELECT EITHER BUILD ALL JOBS/BUILD FAILED JOBS(TOP RIGHT CORNER) .YOU WILL SEE BUILD SUCCESSFUL.
+Go to ACTION TAB -> workflow ->  RERUN JOB AND THEN SELECT EITHER BUILD ALL JOBS/BUILD FAILED JOBS(TOP RIGHT CORNER) .YOU WILL SEE BUILD SUCCESSFUL.
 
 Congrats , application is deployed successfully to HEROKU
 
-open heroku -> click on app -> click on open app
+open heroku -> click on your app -> click on open app
 
-https://cicd-app123.herokuapp.com/  -- link to fetch the result.
+https://cicd-app123.herokuapp.com/  -- heroku link to fetch the result.
+
+****now once u again push the result again the workflow will be created and again the buld will happen
 
 
 
