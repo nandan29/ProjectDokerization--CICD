@@ -44,7 +44,8 @@ iii) now we will make app as our current working directory
 iv) now install all the required libraries in new virtual m/c
  - RUN pip install -r requirements.txt
 
-v) we will set the port on which our application will run
+v) we will set the port on which our application will run (since the port no is dynamic we will just supply the 
+variable name and the port no will be provided by heroku during deployment)
  - EXPOSE $PORT
 
 vi)Finally ,which file is needed to run the application i.e. app.py
@@ -57,7 +58,7 @@ example:-CMD gunicorn --workers=4 --bind 0.0.0.0.$PORT app:app
 **gunicorn  is used to handle web server request , when ever user is trying to access any url so it is the 
 duty of gunicorn  to accept that request , bind it with the main logic and return response back to the user ,
 it is based on linux m/c ans that is why we have given ubuntu m/c in main.yaml
-** we dont specify the port , this port is applied by heroku 
+
 ***workers are basically the listeners for web server request. 
 
 
