@@ -1,5 +1,5 @@
 # ProjectDokerization--CICD
-Containerising the hello world app and setting up CICD pipeline
+Containerising the hello world app , setting up CICD pipeline and deploying the docker image on HEROKU
 
 
 
@@ -41,16 +41,9 @@ pip install -r requirements.txt
 
 
 
-3) TO connect CICD pipeline with heroku wen need 3 things :-
-i) heroku login email = shubham.datascience29@gmail.com
-ii) heroku api key = 86124779-a8a5-444f-a7cf-a4804fbf213c
-iii) heroku app = cicd-app123
-
-****heeroku api key - [ topRightCorner under profile ->  accountSetting -> apikey -> reveal]
-****heroku app = [click on new -> create new app -> give some name]
 
 
-4) create Dockerfile
+3) create Dockerfile
 i) which python version we want in our virtual  m/c .
 FROM python:3.7
 
@@ -76,7 +69,40 @@ example:-CMD gunicorn --workers=4 --bind 0.0.0.0.$PORT app:app
 ****here 0.0.0.0 is local IP
 
 
-5) Build Docker Image
+
+
+4)Deploying Dockerised project in heroku
+
+i) create .github folder and inside that workflows folder and inside tat create a file called main.yaml file.
+
+3) TO connect CICD pipeline with heroku wen need 5 things :-
+i) heroku login email = shubham.datascience29@gmail.com
+ii) heroku api key = <dont keep it public>
+iii) heroku app = cicd-app123
+iv)location of Dockerfile
+v)name of Dockerfile
+
+****heeroku api key - [ topRightCorner under profile ->  accountSetting -> apikey -> reveal]
+****heroku app = [click on new -> create new app -> give some name]
+
+
+Github will allocate a virtual ubuntu m/c where docker image will be build using github action and for deploying that docker image on heroku we need 5 things which I already mentioned above.
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+4) Build Docker Image manually
 
 i)docker build -t <image_name>:<tagname> .
 
@@ -91,7 +117,7 @@ docker images
 iii) To run the built docker image
 docker run -p <portno>:<portno> -e PORT =<portno> <docker iamge id>
 
-examples:- docker run -p 8001:8001 -e PORT =8001 6c1504c6961f
+examples:- docker run -p 8001:8001 -e PORT =8001 f3d62b5538b5
 
 **normally in local all apps are tied to 5000
 
@@ -101,3 +127,4 @@ docker ps
 v)to stop docker conatiners
 docker stop <container id>
 
+*/
