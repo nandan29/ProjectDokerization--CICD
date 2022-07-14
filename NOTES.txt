@@ -111,31 +111,3 @@ https://cicd-app123.herokuapp.com/  -- heroku link to fetch the result.
 
 
 
-/*
-
-Build Docker Image manually
-
-i)docker build -t <image_name>:<tagname> .
-
-***image name must be lower case
-****u can give any name for project and tag
-
-example:- docker build -t cicd_project:latest .
-
-ii) to list docker iamge
-docker images
-
-iii) To run the built docker image
-docker run -p <portno>:<portno> -e PORT =<portno> <docker iamge id>
-
-examples:- docker run -p 8001:8001 -e PORT =8001 f3d62b5538b5
-
-**normally in local all apps are tied to 5000
-
-iv) to check the status of running docker container
-docker ps
-
-v)to stop docker conatiners
-docker stop <container id>
-
-*/
