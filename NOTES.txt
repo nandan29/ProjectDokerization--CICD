@@ -44,7 +44,7 @@ iii) now we will make app as our current working directory
 iv) now install all the required libraries in new virtual m/c
  - RUN pip install -r requirements.txt
 
-v) we will set the port on which our application will run (since the port no is dynamic we will just supply the 
+v) we will set the port on which our application will run (remember:- IN HEROKU since the port no is dynamic we will just supply the 
 variable name and the port no will be provided by heroku during deployment)
  - EXPOSE $PORT
 
